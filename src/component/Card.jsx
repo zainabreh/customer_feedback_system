@@ -1,32 +1,51 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
-export default function Card({product}) {
+export default function Carad({ prod }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <div>
+      <Card sx={{ maxWidth: 340 }}>
+      <img
+    src={prod.image}
+    alt={prod.title}
+    style={{
+      height: 200,
+      width: 200,
+      objectFit: 'contain', 
+      cursor:"pointer"
+    }}
+  />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div" sx={{
+            overflow:"hidden",
+            textOverflow:"ellipsis",
+            whiteSpace:"nowrap",
+            maxWidth:"400px"
+          }}>
+            {prod.title}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              overflow: "hidden",
+              display:"-webkit-box",
+              WebkitBoxOrient:"vertical",
+              WebkitLineClamp:2
+            }}
+          >
+            {prod.description}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+    </div>
   );
 }

@@ -1,30 +1,26 @@
-import { Card } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import Cards from '../component/Cards'
 
 const Product = () => {
 
-    const {data,setData} = useState()
+    const [data,setData] = useState([])
 
     useEffect(()=>{
 
         const fetchingData = async ()=>{
-            const data = await fetch('https://fakestoreapi.com/products')
-            const res = await data.json()
+            const products = await fetch('https://fakestoreapi.com/products')
+            const res = await products.json()
             setData(res)
-            console.log(data)
         }
 
         fetchingData()
-    })
+    },[])
 
   return (
     <>
-    {
-        data.map((prod)=>{
-            <Card product={prod}/>
-        })
-    }
-     
+  
+    <Cards data={data}/>     
+    
     </>
   )
 }
