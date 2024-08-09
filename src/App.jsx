@@ -4,6 +4,8 @@ import Layout from './component/Layout'
 import Product from './pages/Product'
 import ReviewForm from './pages/ReviewForm'
 import SubmitFormResult from './pages/SubmitFormResult'
+import ReviewTable from './pages/ReviewTable'
+import ReviewDetail from './pages/ReviewDetail'
 
 const App = () => {
 
@@ -12,8 +14,10 @@ const App = () => {
       <Route path='/' element={<Layout/>}>
         {/* <Route index element={<Product/>} /> */}
         {/* <Route index  element={<ReviewForm/>} /> */}
-        <Route index  element={<SubmitFormResult/>} />
+        {/* <Route index  element={<SubmitFormResult/>} /> */}
         {/* <Route path='/review' element={<ReviewForm/>} /> */}
+        {/* <Route index element={<ReviewTable/>}/> */}
+        <Route index element={<ReviewDetail/>}/>
       </Route>
     )
   )

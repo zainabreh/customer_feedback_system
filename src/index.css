@@ -8,7 +8,7 @@ body{
     background-color: aliceblue;
 }
 
-.container {
+.container{
     border: 5px solid black;
     display: flex;
     flex-wrap: wrap;
@@ -31,5 +31,29 @@ body{
 }
 .heading h2{
       font-weight: 700;
+  }
 
+  .main_container {
+    /* border: 2px solid green; */
+    width: 1095px;
+    margin: 150px auto;
+    text-align: center;
+    padding: 20px;
+    text-wrap: wrap;
+    box-shadow: 0 5px 20px 1px gray;
+  }
+  .main_container p{
+    opacity: .8;
+    font-size: 16px;
+  }
+  .main_container h5{
+    margin-block: 20px;
+    font-weight: 700;
+  }
+
+  .review_table{
+    width: 1095px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
   }
