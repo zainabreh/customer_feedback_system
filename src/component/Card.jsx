@@ -4,8 +4,23 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { AiOutlineStar } from "react-icons/ai";
 
 export default function Carad({ prod }) {
+  
+  const ratingStar = Array.from({length:5},(elem,index)=>{
+    let number = index + 0.5
+    return (
+      <span key={index}>
+        {
+          prod.rating.rate >= index + 1 ? (<FaStar className="icon"/>) : prod.rating.rate >= number ? (<FaStarHalfAlt className="icon"/> ) : (<AiOutlineStar className="icon"/>)
+        }
+      </span>
+    )
+  })
+  
   return (
     <div>
       <Card sx={{ maxWidth: 340 }}>
@@ -40,10 +55,18 @@ export default function Carad({ prod }) {
           >
             {prod.description}
           </Typography>
+          <Typography 
+           sx={{
+          fontSize:"15px",
+          marginTop:"20px"
+          }}
+          >
+            Rating: {ratingStar}
+          </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+          <Link to={`/reviewForm/${prod.id}`}><Button size="small">Review</Button></Link>
+          <Button size="small">Add To Cart</Button>
         </CardActions>
       </Card>
     </div>

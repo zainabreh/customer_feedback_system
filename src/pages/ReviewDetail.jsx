@@ -4,7 +4,7 @@ const ReviewDetail = () => {
   return (
     <>
       <table
-        class="table table-borderless table-success review_table"
+        className="table table-borderless table-success review_table"
         style={{ backgroundColor: "aliceblue" }}
       >
         <thead>

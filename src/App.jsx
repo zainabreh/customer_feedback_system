@@ -12,12 +12,11 @@ const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<Layout/>}>
-        {/* <Route index element={<Product/>} /> */}
-        {/* <Route index  element={<ReviewForm/>} /> */}
-        {/* <Route index  element={<SubmitFormResult/>} /> */}
-        {/* <Route path='/review' element={<ReviewForm/>} /> */}
-        {/* <Route index element={<ReviewTable/>}/> */}
-        <Route index element={<ReviewDetail/>}/>
+        <Route index element={<Product/>} />
+        <Route path='/reviewForm/:id'  element={<ReviewForm/>} />
+        <Route path='/submittedForm'  element={<SubmitFormResult/>} />
+        <Route path='/reviewTable' element={<ReviewTable/>}/>
+        <Route path='/reviewDetail' element={<ReviewDetail/>}/>
       </Route>
     )
   )

@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const ReviewTable = () => {
   return (
     <>
-      <table class="table table-success table-striped review_table">
+      <div className="table-responsive">
+      <table className="table table-success  table-striped review_table">
         <thead>
           <tr>
             <th scope="col">Form Details</th>
@@ -18,7 +19,7 @@ const ReviewTable = () => {
         </thead>
         <tbody>
           <tr>
-            <th><Link to={""}>View Detail</Link></th>
+            <th><Link to={"/reviewDetail"}>View Detail</Link></th>
             <td>Mark</td>
             <td>zain@gmail.com</td>
             <td>12345678941</td>
@@ -28,6 +29,7 @@ const ReviewTable = () => {
           </tr>
         </tbody>
       </table>
+      </div>
     </>
   );
 };

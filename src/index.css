@@ -50,7 +50,9 @@ body{
     margin-block: 20px;
     font-weight: 700;
   }
-
+.icon{
+  color: orange;
+}
   .review_table{
     width: 1095px;
     margin: 50px auto;
