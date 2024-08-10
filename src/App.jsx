@@ -16,7 +16,7 @@ const App = () => {
         <Route path='/reviewForm/:id'  element={<ReviewForm/>} />
         <Route path='/submittedForm'  element={<SubmitFormResult/>} />
         <Route path='/reviewTable' element={<ReviewTable/>}/>
-        <Route path='/reviewDetail' element={<ReviewDetail/>}/>
+        <Route path='/reviewDetail/:id' element={<ReviewDetail/>}/>
       </Route>
     )
   )

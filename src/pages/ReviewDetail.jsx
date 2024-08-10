@@ -1,6 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 const ReviewDetail = () => {
+  const {id} = useParams
   return (
     <>
       <table
@@ -16,28 +18,28 @@ const ReviewDetail = () => {
         <tbody>
           <tr>
             <td scope="col" style={{fontWeight:"600"}}>Customer Name</td>
-            <td>Mark</td>
+            <td>{id.customerName}</td>
           </tr>
           <tr>
             <td scope="col" style={{fontWeight:"600"}}>Email</td>
-            <td>zain@gmail.com</td>
+            <td>{id.email}</td>
           </tr>
           <tr>
             <td scope="col" style={{fontWeight:"600"}}>Phone</td>
-            <td>12345678941</td>
+            <td>{id.phoneNumber}</td>
           </tr>
           <tr>
             <td scope="col" style={{fontWeight:"600"}}>Price</td>
-            <td>Good</td>
+            <td>{id.price}</td>
           </tr>
           <tr>
             <td scope="col" style={{fontWeight:"600"}}>Quality</td>
-            <td>Poor</td>
+            <td>{id.quality}</td>
           </tr>
 
           <tr>
             <td scope="col" style={{fontWeight:"600"}}>Service</td>
-            <td>Neutral</td>
+            <td>{id.service}</td>
           </tr>
         </tbody>
       </table>
@@ -45,7 +47,7 @@ const ReviewDetail = () => {
       <div style={{textAlign:"center"
       }}>
         <h5>Overall Impression</h5>
-        <p>Stars</p>
+        <p>{id.rating}</p>
       </div>
     </>
   );
