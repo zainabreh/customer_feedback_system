@@ -41,13 +41,10 @@ const ReviewForm = () => {
         // console.log(v);
         setSubmitting(false)
         setForm(v)
+        dispatch(addReview(v,prodId.id))
         navigate("/submittedForm")
       }
     })
-
-    const handleReview = (id)=>{
-      dispatch(addReview(form,id))
-    }
 
 
   return (
@@ -331,7 +328,7 @@ const ReviewForm = () => {
           </div>
 
           <div className="col-12 text-center my-5 ">
-            <button type="submit" className="btn btn-primary" onClick={()=>handleReview(prodId.id)}>
+            <button type="submit" className="btn btn-primary">
               Submit Review
             </button>
           </div>
