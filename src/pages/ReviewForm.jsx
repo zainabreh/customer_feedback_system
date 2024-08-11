@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from 'yup';
 import { useDispatch } from "react-redux";
@@ -11,9 +11,10 @@ import { addReview } from "../Feature/Review";
 
 const ReviewForm = () => {
   const prodId = useParams()
+  const location = useLocation();
+  const { prod } = location.state;
   
     const [value, setValue] = useState(0);
-    const [form,setForm] = useState()
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const {handleChange,handleSubmit,handleBlur,touched,errors,values,isValid} = useFormik({
@@ -25,6 +26,7 @@ const ReviewForm = () => {
         quality:"",
         service:"",
         starRating:"",
+        description:""
       },
       validationSchema: yup.object({
         email:yup.string().email('Invalid email address').required('Required'),
@@ -40,9 +42,8 @@ const ReviewForm = () => {
       onSubmit: (v,{setSubmitting})=>{
         // console.log(v);
         setSubmitting(false)
-        setForm(v)
         dispatch(addReview(v,prodId.id))
-        navigate("/submittedForm")
+        navigate(`/submittedForm`)
       }
     })
 
@@ -321,14 +322,14 @@ const ReviewForm = () => {
             <h5 >
               Leave a written review for others.
             </h5>
-            <textarea rows={5}  className="form-control" id="inputAddress" />
+            <textarea rows={5} name="description" onChange={handleChange} onBlur={handleBlur} value={values.description}  className="form-control" id="inputAddress" />
           </div>
 
 
           </div>
 
           <div className="col-12 text-center my-5 ">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary revbtn">
               Submit Review
             </button>
           </div>

@@ -9,7 +9,6 @@ body{
 }
 
 .container{
-    border: 5px solid black;
     display: flex;
     flex-wrap: wrap;
     margin-block: 20px;
@@ -58,4 +57,115 @@ body{
     margin: 50px auto;
     text-align: center;
     padding: 20px;
+  }
+
+
+
+
+
+
+
+.image{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image img{
+  width: 100%;
+}
+  .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    padding: 20px;
+  }
+  .cards {
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+  }
+  .cards .price{
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .cards .price span{
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .text-body-secondary {
+    color: #999;
+    font-size: 12px;
+  }
+  
+  .card-body p {
+    margin-bottom: 10px;
+  }
+  
+  .card-body p:last-child {
+    margin-bottom: 0;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .add-feedback-btn {
+    background-color: #ff9800;
+    width: 100%;
+  }
+  
+  .add-feedback-btn:hover {
+    background-color: #ff9900;
+  }
+  .revbtn{
+    background-color: #ff9800;
+    width: fit-content;
+  }
+
+  .feedbackContainer{
+    width: 1080px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid rebeccapurple;
+  }
+
+  .cusName{
+    font-size: 20px ;
+    color: green;
+    font-weight: 700;
   }

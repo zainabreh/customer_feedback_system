@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 const ReviewTable = () => {
   const { reviewObj } = useSelector((v) => v.Review);
+
+
   return (
     <>
       <div className="table-responsive">
@@ -21,9 +23,9 @@ const ReviewTable = () => {
           </thead>
           <tbody>
             {reviewObj.map((data,index) => (
-              <tr>
+              <tr key={index}>
                 <th>
-                  <Link to={`/reviewDetail/${index}`}>View Detail</Link>
+                <Link to={`/reviewDetail/${data.id}?data=${encodeURIComponent(JSON.stringify(data))}`}>View Detail</Link>
                 </th>
                 <td>{data.customerName}</td>
                 <td>{data.email}</td>
@@ -33,17 +35,6 @@ const ReviewTable = () => {
                 <td>{data.service}</td>
               </tr>
             ))}
-            <tr>
-              <th>
-                <Link to={"/reviewDetail"}>View Detail</Link>
-              </th>
-              <td>Mark</td>
-              <td>zain@gmail.com</td>
-              <td>12345678941</td>
-              <td>Good</td>
-              <td>Poor</td>
-              <td>Neutral</td>
-            </tr>
           </tbody>
         </table>
       </div>

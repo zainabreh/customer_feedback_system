@@ -65,8 +65,7 @@ export default function Carad({ prod }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Link to={`/reviewForm/${prod.id}`}><Button size="small">Review</Button></Link>
-          <Button size="small">Add To Cart</Button>
+          <Link to={`/productDetail/${prod.id}`} state={{prod:prod}}><Button size="small">Detail</Button></Link>
         </CardActions>
       </Card>
     </div>

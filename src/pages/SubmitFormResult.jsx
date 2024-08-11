@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 const SubmitFormResult = () => {
   return (
@@ -12,9 +12,11 @@ const SubmitFormResult = () => {
           <h5>Thank you for providing the feedback</h5>
           <p>We will work towards Improving your experience</p>
         </div>
-        <Link to={"/"}><button type="submit" className="btn btn-primary">
-              Close
-            </button></Link>
+        <Link to={`/`} replace>
+  <button type="submit" className="btn btn-primary revbtn">
+    Close
+  </button>
+</Link>
       </div>
     </>
   )
